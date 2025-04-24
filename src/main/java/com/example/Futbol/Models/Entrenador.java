@@ -1,5 +1,6 @@
 package com.example.Futbol.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +15,7 @@ public class Entrenador {
 
     @ManyToOne
     @JoinColumn(name = "id_equipo")
+    @JsonBackReference
     private Equipo equipo;
 
     public Integer getId_entrenador() {

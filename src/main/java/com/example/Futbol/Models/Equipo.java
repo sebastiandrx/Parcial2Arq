@@ -1,5 +1,6 @@
 package com.example.Futbol.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -17,6 +18,7 @@ public class Equipo {
     private LocalDate fundacion;
 
     @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Jugador> jugadores;
 
     @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)

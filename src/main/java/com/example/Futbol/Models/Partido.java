@@ -1,5 +1,6 @@
 package com.example.Futbol.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -26,6 +27,7 @@ public class Partido {
     private Equipo equipoVisita;
 
     @OneToMany(mappedBy = "partido")
+    @JsonManagedReference
     private List<EstadisticaJugador> estadisticas;
 
     public Integer getId_partido() {
