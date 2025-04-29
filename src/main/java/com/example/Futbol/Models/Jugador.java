@@ -1,6 +1,7 @@
 package com.example.Futbol.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -22,6 +23,7 @@ public class Jugador {
     @ManyToOne
     @JoinColumn(name = "id_equipo")
     @JsonBackReference
+    @JsonIgnore
     private Equipo equipo;
 
     @OneToMany(mappedBy = "jugador")
